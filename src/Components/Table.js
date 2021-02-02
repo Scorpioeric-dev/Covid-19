@@ -2,16 +2,15 @@ import React from "react";
 import '../Style/Table.css'
 
 export const Table = ({ countries }) => {
-  return (
-    <div className="table">
-      {countries.map(({ country, cases }) => (
+  return  <div className="table">
+      {countries.map(country => (
         <tr>
-          <td>{country}</td>
+          <td>{country.country}</td>
           <td>
-            <strong>{cases}</strong>
+            <strong>{country.cases}</strong>
           </td>
         </tr>
       ))}
     </div>
-  );
+  
 };
