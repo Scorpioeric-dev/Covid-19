@@ -11,6 +11,7 @@ import { Map } from "./Components/Map";
 import { Table } from "./Components/Table";
 import { sortData } from "./util";
 import "./App.css";
+import { LineGraph } from "./Components/LineGraph";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
@@ -104,6 +105,7 @@ const App = () => {
           {/*Table*/}
           <Table countries={tableData}/>
           <h3>WorldWide New Cases </h3>
+          <LineGraph/>
         {/*Graph */}
       </Card>
     </div>
