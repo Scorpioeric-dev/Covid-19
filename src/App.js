@@ -12,12 +12,17 @@ import { Table } from "./Components/Table";
 import { sortData } from "./util";
 import "./App.css";
 import  {LineGraph}  from "./Components/LineGraph";
+import "leaflet/dist/leaflet.css";
+
 
 const App = () => {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
+  // const [casesType, setCasesType] = useState("cases"); 
   const [tableData, setTableData] = useState([])
+  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
+  const [mapZoom, setMapZoom] = useState(3);
 
   //useEffect() runs a piece of code  based on a given condition
 
@@ -60,6 +65,8 @@ const App = () => {
       .then((data) => {
         setCountry(countryCode);
         setCountryInfo(data);
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+        setMapZoom(4)
       });
   };
 
@@ -96,7 +103,7 @@ const App = () => {
           <InfoBox title="Recovered" cases={countryInfo.recovered} />
           <InfoBox title="Deaths" cases={countryInfo.deaths} />
         </div>
-        <Map />
+        <Map center={mapCenter} zoom={mapZoom}/>
       </div>
       <Card className="app_right">
         <CardContent>
@@ -106,7 +113,7 @@ const App = () => {
           <Table countries={tableData}/>
           <h3>WorldWide New Cases </h3>
           <LineGraph/>
-        {/*Graph */}
+        
       </Card>
     </div>
   );
