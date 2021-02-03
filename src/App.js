@@ -11,7 +11,7 @@ import { Map } from "./Components/Map";
 import { Table } from "./Components/Table";
 import { sortData } from "./util";
 import "./App.css";
-import { LineGraph } from "./Components/LineGraph";
+import  {LineGraph}  from "./Components/LineGraph";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
@@ -89,12 +89,12 @@ const App = () => {
         <div className="app_stats">
           <InfoBox
             title="Coronavirus Cases"
-            cases={countryInfo.todayCases}
+            cases={countryInfo.cases}
           />
 
           
-          <InfoBox title="Recovered" cases={countryInfo.todayRecovered} />
-          <InfoBox title="Deaths" cases={countryInfo.todayDeaths} />
+          <InfoBox title="Recovered" cases={countryInfo.recovered} />
+          <InfoBox title="Deaths" cases={countryInfo.deaths} />
         </div>
         <Map />
       </div>
