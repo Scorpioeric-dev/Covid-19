@@ -12,7 +12,7 @@ export const InfoBox = ({ title, cases, total }) => {
         <h2 className="infoBox_cases">{cases}</h2>
 
         <Typography className="infoBox_total" color="textSecondary">
-          {total} 
+          {total} Total To Date
         </Typography>
       </CardContent>
     </Card>
