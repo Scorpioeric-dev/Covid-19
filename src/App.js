@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./App.css";
 import {
   MenuItem,
   FormControl,
@@ -10,7 +11,6 @@ import { InfoBox } from "./Components/InfoBox";
 import { Map } from "./Components/Map";
 import { Table } from "./Components/Table";
 import { sortData } from "./util";
-import "./App.css";
 import { LineGraph } from "./Components/LineGraph";
 import "leaflet/dist/leaflet.css";
 import numeral from "numeral";
@@ -21,7 +21,7 @@ const App = () => {
   const [countryInfo, setCountryInfo] = useState({});
   const [casesType, setCasesType] = useState("cases");
   const [tableData, setTableData] = useState([]);
-  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
+  const [mapCenter, setMapCenter] = useState({lat: 34.80746, lng: -40.4796});
   const [mapZoom, setMapZoom] = useState(3);
   const [mapCountries, setMapCountries] = useState([]);
 
@@ -44,7 +44,7 @@ const App = () => {
             name: country.country,
             value: country.countryInfo.iso2,
           }));
-          const sortedData = sortData(data);
+          let sortedData = sortData(data);
           setCountries(countries);
           setMapCountries(data);
           setTableData(sortedData);
@@ -55,7 +55,7 @@ const App = () => {
 
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
-    setCountry(countryCode);
+    // setCountry(countryCode);
 
     const url =
       countryCode === "worldwide"
@@ -72,7 +72,8 @@ const App = () => {
         setMapZoom(4);
       });
   };
-
+  console.log('CountryInfo >>>',)
+console.log('CountryInfo >>>', countryInfo)
   return (
     <div className="app">
       {/*AppLeft*/}

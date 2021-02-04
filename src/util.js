@@ -2,8 +2,6 @@ import React from "react";
 import numeral from "numeral";
 import { Circle, Popup } from "react-leaflet";
 
-
-
 const casesTypeColors = {
   cases: {
     hex: "#CC1034",
@@ -25,11 +23,9 @@ const casesTypeColors = {
   },
 };
 
-
 export const sortData = (data) => {
   const sortedData = [...data];
   return sortedData.sort((a, b) => (a.cases > b.cases ? -1 : 1));
- 
 };
 
 export const showDataOnMap = (data, casesType = "cases") =>
@@ -63,5 +59,3 @@ export const showDataOnMap = (data, casesType = "cases") =>
       </Popup>
     </Circle>
   ));
-  
-
