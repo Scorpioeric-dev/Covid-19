@@ -20,9 +20,10 @@ body {
   justify-content: space-between;
 }
 
-.app_dropdown {
+.app__dropdown {
   background-color: white;
   width: 200px;
+  
    
 }
 
@@ -40,16 +41,16 @@ h3 {
 }
 
 
-.app_stats {
+.app__stats {
  display: flex;
  justify-content: space-between;
 } 
 
 
-.app_left {
+.app__left {
   width: 50%;
 }
-.app_right {
+.app__right {
   width: 45%;
 }
 
@@ -67,8 +68,8 @@ h3 {
   .app {
     flex-direction: column;
   }
-  .app_left,
-  .app_right {
+  .app__left,
+  .app__right {
     width: 98%;
     margin-left: 10px;
   }
